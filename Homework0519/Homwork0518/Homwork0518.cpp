@@ -30,7 +30,7 @@ int StringCount(char* _Arr)
     return ChCount;
 }
 
-void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
+void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)//const 를 먼저 해주면 좋은 이유 : 값 수정에 있어서 문제가 생기면 그때 치우는게 안전함
 {
     // 1. 들어온 글자를 전부 '1'로 채워봐라.
     //  1-1. 함수 내부에서 하지 말고
