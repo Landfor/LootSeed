@@ -36,6 +36,23 @@ void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
     //  1-1. 함수 내부에서 하지 말고
     // for while도 생각하지 말고
 
+    if (nullptr == _Arr)//nullptr선언하고 반환하는 이유 : 데이터가 겹치기때문에 번거로운 초기화 방법이 필요
+    {
+        return;
+    }
+
+    int ChCount = 0;
+    while (_Arr[ChCount])
+    {
+        char Ch = _Arr[ChCount];
+
+        if (Ch == _PrevCh)
+        {
+            _Arr[ChCount] = _NextCh;
+        }
+
+        ++ChCount;
+    }
 
     return;
 }
@@ -55,13 +72,11 @@ int main()
     {
         char Arr[100] = "aaa bbb ccc";
 
-        Arr[0] = '1';
-
         // Arr[100] = "1111111111111";
 
         // 3이 나와야 합니다.
         // "aaa bbb ccc"; => "aaa bbb ddd";
-        ChangeCh(Arr, 'c', 'd');
+        ChangeCh(nullptr, 'c', 'd');
 
         int a = 0;
     }
