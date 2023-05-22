@@ -54,7 +54,7 @@ int StringCount(char* _Arr)
 
 void TrimDelete(char* _string)
 {
-    char* Curchar;
+    char* Curchar = 0;
 
     int Count = 0;
     while (_string[Count])
@@ -74,7 +74,7 @@ void TrimDelete(char* _string)
 
             int DeletedCount = StringCount(Deleteptr1);
 
-            for(size_t i = 0;)
+//            for (size_t i = 0;);
 
             int a = 0;
         }

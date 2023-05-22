@@ -32,12 +32,12 @@ void StatusRender(const char* const _Name, int _Att, int _Hp)
     // 40개로 맞춰오세요.
 
     int ChCount = 0;
-    char _NameSpace[40] = _Name[40];
-    while (_NameSpace[ChCount])
-    {
-        char Ch = _Name[ChCount];
 
-        _Name[ChCount] = _NextCh;
+    char Value[40] = {};
+
+    while (_Name[ChCount])
+    {
+        Value[ChCount] = ' ';
 
         ++ChCount;
     }
@@ -46,7 +46,7 @@ void StatusRender(const char* const _Name, int _Att, int _Hp)
     printf_s("%s--------------------------\n", _Name);
     printf_s("공격력 : %d\n", _Att);
     printf_s("체  력 : %d\n", _Hp);
-    printf_s("--------------------------\n");
+    printf_s("%s--------------------------\n", Value);
 }
 
 void DamagePrint(const char* const _AttName, const char* const _DefName, int _Att)
@@ -75,9 +75,9 @@ int main()
 
     int PlayerHp = 200;
     int PlayerAtt = 100;
-    char PlayerName[40] = "fasdhjkfasdhjkfasdhjfklasdhjkfasdhjfk";
+    char PlayerName[40] = "Player";
 
-    int MonsterHp = 100;
+    int MonsterHp = 150;
     int MonsterAtt = 10;
     char MonsterName[40] = "Monster";
 
@@ -93,15 +93,39 @@ int main()
         _getch();
 
         // 아무키나 입력할때까지 기다리는 함수
-
-        DamagePrint(PlayerName, MonsterName, PlayerAtt);
+        system("cls");
         Damage(MonsterHp, PlayerAtt);
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(PlayerName, MonsterName, PlayerAtt);
         // MonsterHp -= PlayerAtt;
+
+        if (PlayerHp <= 0)
+        {
+            break;
+        }
+        else if (MonsterHp <= 0)
+        {
+            break;
+        }
 
         _getch();
 
-        DamagePrint(MonsterName, PlayerName, MonsterAtt);
+        system("cls");
         Damage(PlayerHp, MonsterAtt);
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(PlayerName, MonsterName, PlayerAtt);
+        DamagePrint(MonsterName, PlayerName, MonsterAtt);
+
+        if (PlayerHp <= 0)
+        {
+            break;
+        }
+        else if (MonsterHp <= 0)
+        {
+            break;
+        }
 
         _getch();
 
