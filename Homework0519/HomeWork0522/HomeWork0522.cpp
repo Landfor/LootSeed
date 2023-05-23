@@ -37,7 +37,7 @@ void StatusRender(const char* const _Name, int _Att, int _Hp)
 
     while (_Name[ChCount])
     {
-        Value[ChCount] = ' ';
+        Value[ChCount] = '-';
 
         ++ChCount;
     }
@@ -102,10 +102,16 @@ int main()
 
         if (PlayerHp <= 0)
         {
+            printf_s("%s가 죽었습니다.\n", PlayerName);
+            printf_s("%s의 승리입니다.\n", MonsterName);
+            _getch();
             break;
         }
         else if (MonsterHp <= 0)
         {
+            printf_s("%s가 죽었습니다.\n", MonsterName);
+            printf_s("%s의 승리입니다.\n", PlayerName);
+            _getch();
             break;
         }
 
@@ -120,10 +126,16 @@ int main()
 
         if (PlayerHp <= 0)
         {
+            printf_s("%s가 죽었습니다.\n", PlayerName);
+            printf_s("%s의 승리입니다.\n", MonsterName);
+            _getch();
             break;
         }
         else if (MonsterHp <= 0)
         {
+            printf_s("%s가 죽었습니다.\n", MonsterName);
+            printf_s("%s의 승리입니다.\n", PlayerName);
+            _getch();
             break;
         }
 
