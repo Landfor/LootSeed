@@ -25,7 +25,7 @@ class Player
 };
 
 //  [H][H][H][H][][][][] //  [A][A][A][A][][][][]
-void TestFunction(Player _Newplayer, int _Test)
+void TestFunction(Player _Newplayer, int _Test)//서로 위치 바꾸기
 {
     size_t A = sizeof(_Newplayer);
     // 이것도 확인해보세요.
@@ -38,9 +38,9 @@ int main()
 
     Test NewTest;
 
-    __int64 Address0 = (__int64)&NewTest.A;
+    __int64 Address0 = (__int64)&NewTest.A;//!
 
-    Player NewPlayer = {};
+    Player NewPlayer = {};//주석
     TestFunction(NewPlayer, 20);
 }
 
