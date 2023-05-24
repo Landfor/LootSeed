@@ -64,7 +64,13 @@ public:
 
     void SetPixel(const int4& _Pos, char _Ch)
     {
-        ArrScreen[_Pos.Y][_Pos.X] = _Ch;
+        if (XLine > _Pos.X)
+        {
+            if (YLine > _Pos.Y)
+            {
+                ArrScreen[_Pos.Y][_Pos.X] = _Ch;
+            }
+        }
     }
 
     void Clear()
@@ -117,7 +123,13 @@ public:
 
     void AddPos(const int4& _Pos)
     {
-        Pos += _Pos;
+        if (XLine > Pos.X)
+        {
+            if (YLine > Pos.Y)
+            {
+                Pos += _Pos;
+            }
+        }
     }
 
 
