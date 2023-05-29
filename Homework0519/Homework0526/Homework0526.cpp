@@ -8,6 +8,7 @@
 #include "Int4.h"
 #include "ConsoleScreen.h"
 #include "Player.h"
+#include "Wall.h"
 
 // 1. 파일 정리
 // 2. 10개의 장애물 배치 class Wall
@@ -261,6 +262,7 @@ void /*__cdecl*/ Function()
 int main()
 {
     ConsoleScreen Screen;
+    Wall BlockWall;
     Screen.Init('*');
 
     Player MainPlayer;
@@ -277,8 +279,8 @@ int main()
         for (size_t i = 0; i < 5; i++)
         {
             // int4 WallPos = ArrWall[i].GetPos();
-            int4 WallPos = { 5 + Count, i };
-            Screen.SetPixel(WallPos, '0');
+            BlockWall.Wall_Pos = { 5 + Count, i };
+            Screen.SetPixel(Wall.Wall_Pos, '0');
         }
         // ++Count;
 

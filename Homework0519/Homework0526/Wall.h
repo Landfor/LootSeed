@@ -23,7 +23,7 @@ public:
 
 private:
 
-	int4 Pos;
+	int4 WallPos;
 	char Block = '0';
 	char ArrScreen[YLine][XLine + 1] = {};
 };

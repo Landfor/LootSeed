@@ -107,6 +107,11 @@ public:
         if (false == _Sreen->IsScreenOut(GetPos() + MovePos))
         {
             AddPos(MovePos);
+        }//wall을 만들 때, 이 방식을 그대로 이용해보자
+
+        if (false == _Sreen->IsWallBlock(GetPos() + MovePos))
+        {
+            AddPos(MovePos);
         }
 
     }
