@@ -3,6 +3,7 @@
 #include <iostream>
 #include "Int4.h"
 #include "ConsoleScreen.h"
+#include "Player.h"
 
 class Wall
 {

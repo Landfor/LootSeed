@@ -279,7 +279,7 @@ int main()
         for (size_t i = 0; i < 5; i++)
         {
             // int4 WallPos = ArrWall[i].GetPos();
-            BlockWall.Wall_Pos = { 5 + Count, i };
+            BlockWall.Wall_Pos( 5 + Count, i );
             Screen.SetPixel(Wall.Wall_Pos, '0');
         }
         // ++Count;
